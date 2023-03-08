@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CV - Albert Vincentius Siahaan</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV - Albert Vincentius Siahaan</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+ <body>
     <div class="container">
       <h1>Curriculum Vitae</h1>
       <hr class="title-line">
@@ -18,6 +20,7 @@
           <ul>
             <li><strong>Nama:</strong> Albert Vincentius Siahaan</li>
             <li><strong>TTL:</strong> Jakarta, 16 Maret 2003</li>
+            <li><strong>Umur:</strong> <span id="age"></span></li>
             <li><strong>Jenis Kelamin:</strong> Laki-Laki</li>
             <li><strong>Agama:</strong> Katholik</li>
             <li><strong>Email:</strong> avtamvan@gmail.com</li>
@@ -57,5 +60,16 @@
         </div>
       </div>
     </div>
+    <script>
+      // calculate age based on birthdate
+      var birthdate = new Date("2003-03-16");
+      var ageInMilliseconds = Date.now() - birthdate.getTime();
+      var ageDate = new Date(ageInMilliseconds);
+      var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+      // display age on the page
+      var ageSpan = document.getElementById("age");
+      ageSpan.innerHTML = age.toString();
+    </script>
   </body>
 </html>
